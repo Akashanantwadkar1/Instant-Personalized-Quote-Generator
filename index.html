@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Insurance Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Personal Insurance Advisor</h1>
+    <p class="subtitle">
+        Get instant, personalized insurance quotes without human intervention
+    </p>
+
+    <form method="POST">
+        <label>Name</label>
+        <input type="text" name="name" required>
+
+        <label>Age</label>
+        <input type="number" name="age" required>
+
+        <label>City</label>
+        <input type="text" name="city" required>
+
+        <label>Policy Type</label>
+        <select name="policy">
+            <option>Health</option>
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Home</option>
+            <option>Life</option>
+            <option>Travel</option>
+        </select>
+
+        <button type="submit">Generate Quote</button>
+    </form>
+
+    {% if premium %}
+    <div class="result">
+        <h2>Estimated Premium</h2>
+        <p>₹ {{ premium }}</p>
+        <span>Generated instantly using AI-driven risk analysis</span>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
